@@ -1,0 +1,17 @@
+version: '3.8'
+services:
+  postgres:
+    image: postgres:latest  # Always pulls the latest PostgreSQL image
+    container_name: postgres
+    environment:
+      POSTGRES_USER: myuser       # Replace with your preferred username
+      POSTGRES_PASSWORD: mypassword  # Replace with your preferred password
+      POSTGRES_DB: mydatabase     # Replace with your database name
+    ports:
+      - "5432:5432"  # Maps container's port 5432 to host's port 5432
+    volumes:
+      - postgres_data:/var/lib/postgresql/data  # Persistent storage
+
+volumes:
+  postgres_data:
+
