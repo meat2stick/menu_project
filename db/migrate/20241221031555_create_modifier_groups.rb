@@ -1,6 +1,6 @@
-class CreateModifierGroup < ActiveRecord::Migration[8.0]
+class CreateModifierGroups < ActiveRecord::Migration[8.0]
   def change
-    create_table :modifier_group do |t|
+    create_table :modifier_groups do |t|
       t.string :identifier
       t.string :label
       t.integer :selection_required_min

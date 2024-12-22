@@ -1,6 +1,6 @@
-class CreateMenu < ActiveRecord::Migration[8.0]
+class CreateMenus < ActiveRecord::Migration[8.0]
   def change
-    create_table :menu do |t|
+    create_table :menus do |t|
       t.string :identifier
       t.string :label
       t.string :state
