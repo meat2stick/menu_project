@@ -1,6 +1,6 @@
-class CreateSections < ActiveRecord::Migration[8.0]
+class CreateSection < ActiveRecord::Migration[8.0]
   def change
-    create_table :sections do |t|
+    create_table :section do |t|
       t.string :identifier
       t.string :label
       t.string :description

@@ -1,6 +1,6 @@
-class CreateMenuSections < ActiveRecord::Migration[8.0]
+class CreateMenuSection < ActiveRecord::Migration[8.0]
   def change
-    create_table :menu_sections do |t|
+    create_table :menu_section do |t|
       t.references :menu, null: false, foreign_key: true
       t.references :section, null: false, foreign_key: true
       t.integer :display_order
