@@ -10,6 +10,11 @@ module Types
     field :end_date, GraphQL::Types::ISO8601Date
     field :created_at, GraphQL::Types::ISO8601DateTime, null: false
     field :updated_at, GraphQL::Types::ISO8601DateTime, null: false
-    field :section, [Types::SectionType], null: true
+    field :sections, [Types::SectionType], null: true
+  end
+
+  # Resolves sections associated with the menu
+  def sections
+    object.sections.to_a
   end
 end

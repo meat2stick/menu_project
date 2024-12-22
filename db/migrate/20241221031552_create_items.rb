@@ -1,6 +1,6 @@
-class CreateItem < ActiveRecord::Migration[8.0]
+class CreateItems < ActiveRecord::Migration[8.0]
   def change
-    create_table :item do |t|
+    create_table :items do |t|
       t.string :type
       t.string :identifier
       t.string :label

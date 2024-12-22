@@ -8,7 +8,7 @@ module Types
     field :description, String
     field :created_at, GraphQL::Types::ISO8601DateTime, null: false
     field :updated_at, GraphQL::Types::ISO8601DateTime, null: false
-    field :menu_section, [Types::MenuSectionType], null: true
+    field :menu_sections, [Types::MenuSectionType], null: true
     field :items, [Types::ItemType], null: true
   end
 
