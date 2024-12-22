@@ -1,6 +1,6 @@
-class CreateModifiers < ActiveRecord::Migration[8.0]
+class CreateModifier < ActiveRecord::Migration[8.0]
   def change
-    create_table :modifiers do |t|
+    create_table :modifier do |t|
       t.references :item, null: false, foreign_key: true
       t.references :modifier_group, null: false, foreign_key: true
       t.integer :display_order
