@@ -12,9 +12,4 @@ module Types
     field :updated_at, GraphQL::Types::ISO8601DateTime, null: false
     field :sections, [Types::SectionType], null: true
   end
-
-  # Resolves sections associated with the menu
-  def sections
-    object.sections.to_a
-  end
 end
