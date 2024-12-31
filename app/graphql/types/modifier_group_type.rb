@@ -9,13 +9,13 @@ module Types
     field :selection_required_max, Integer
     field :created_at, GraphQL::Types::ISO8601DateTime, null: false
     field :updated_at, GraphQL::Types::ISO8601DateTime, null: false
-    field :modifier, [Types::ModifierType], null: true
+    field :modifier, [ Types::ModifierType ], null: true
 
     def modifier
       if context[:item]
         return object.modifier.where(item_id: context[:item].id)
       end
-      return object.modifier
+      object.modifier
     end
   end
 end
