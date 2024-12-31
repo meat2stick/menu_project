@@ -9,14 +9,13 @@ module Types
     field :price, Float
     field :created_at, GraphQL::Types::ISO8601DateTime, null: false
     field :updated_at, GraphQL::Types::ISO8601DateTime, null: false
-    field :modifier_group, [Types::ModifierGroupType], null: true
-    field :modifier, [Types::ModifierType], null: true
+    field :modifier_group, [ Types::ModifierGroupType ], null: true
+    field :modifier, [ Types::ModifierType ], null: true
 
     def modifier_group
       # Pass the current `item` to the context
       context[:item] = object
       object.modifier_group
     end
-
   end
 end
