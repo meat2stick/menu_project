@@ -12,4 +12,11 @@ module Types
     field :updated_at, GraphQL::Types::ISO8601DateTime
     field :sections, [ Types::SectionType ]
   end
+
+  def sections
+    # Pass the current `menu` to the context
+    context[:menu] = object
+    object.sections
+  end
+
 end
