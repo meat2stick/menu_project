@@ -2,12 +2,12 @@
 
 module Types
   class SectionType < Types::BaseObject
-    field :id, ID, null: false
+    field :id, ID
     field :identifier, String
     field :label, String
     field :description, String
-    field :created_at, GraphQL::Types::ISO8601DateTime, null: false
-    field :updated_at, GraphQL::Types::ISO8601DateTime, null: false
-    field :items, [ Types::ItemType ], null: true
+    field :created_at, GraphQL::Types::ISO8601DateTime
+    field :updated_at, GraphQL::Types::ISO8601DateTime
+    field :items, [ Types::ItemType ]
   end
 end
