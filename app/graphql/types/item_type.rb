@@ -12,6 +12,7 @@ module Types
     field :modifier_group, [ Types::ModifierGroupType ]
     field :modifier, [ Types::ModifierType ]
     field :display_order, Integer
+
     def modifier_group
       # Pass the current `item` to the context
       context[:item] = object
