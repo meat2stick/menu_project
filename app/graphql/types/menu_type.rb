@@ -11,7 +11,7 @@ module Types
     field :created_at, GraphQL::Types::ISO8601DateTime
     field :updated_at, GraphQL::Types::ISO8601DateTime
     field :sections, [ Types::SectionType ]
-    field :menu_sections, [Types::MenuSectionType]
+    field :menu_sections, [ Types::MenuSectionType ]
 
     def sections
       MenuSection.where(menu_id: object.id).map do |menu_section|
@@ -20,6 +20,5 @@ module Types
         section
       end
     end
-
   end
 end
