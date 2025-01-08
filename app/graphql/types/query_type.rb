@@ -4,6 +4,10 @@ module Types
   class QueryType < Types::BaseObject
     field :menus, [ Types::MenuType ], null: false, description: "Retrieve all menus"
 
+    field :menu, Types::MenuType, null: true, description: "Retrieve menu by id" do
+      argument :id, ID, required: true
+    end
+
     field :sections, [ Types::SectionType ], null: false, description: "Retrieve all sections"
 
     field :items, [ Types::ItemType ], null: false, description: "Retrieve all items"
@@ -14,6 +18,10 @@ module Types
 
     def menus
       Menu.all
+    end
+
+    def menu(id:)
+      Menu.find_by(id: id)
     end
 
     def sections
