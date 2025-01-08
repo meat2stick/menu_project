@@ -8,9 +8,9 @@ module Types
     field :description, String
     field :created_at, GraphQL::Types::ISO8601DateTime
     field :updated_at, GraphQL::Types::ISO8601DateTime
-    field :items, [Types::ItemType]
+    field :items, [ Types::ItemType ]
     field :display_order, Integer
-    field :section_item, [Types::SectionItemType]
+    field :section_item, [ Types::SectionItemType ]
 
     def items
       SectionItem.where(section_id: object.id).map do |section_item|
