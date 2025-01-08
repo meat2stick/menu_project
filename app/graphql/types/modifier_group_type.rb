@@ -10,12 +10,5 @@ module Types
     field :created_at, GraphQL::Types::ISO8601DateTime, null: false
     field :updated_at, GraphQL::Types::ISO8601DateTime, null: false
     field :modifier, [ Types::ModifierType ], null: true
-
-    def modifier
-      if context[:item]
-        return object.modifier.where(item_id: context[:item].id)
-      end
-      object.modifier
-    end
   end
 end
