@@ -2,15 +2,15 @@
 
 module Types
   class ItemType < Types::BaseObject
-    field :id, ID, null: false
+    field :id, ID
     field :identifier, String
     field :label, String
     field :description, String
     field :price, Float
-    field :created_at, GraphQL::Types::ISO8601DateTime, null: false
-    field :updated_at, GraphQL::Types::ISO8601DateTime, null: false
-    field :modifier_group, [ Types::ModifierGroupType ], null: true
-    field :modifier, [ Types::ModifierType ], null: true
+    field :created_at, GraphQL::Types::ISO8601DateTime
+    field :updated_at, GraphQL::Types::ISO8601DateTime
+    field :modifier_group, [ Types::ModifierGroupType ]
+    field :modifier, [ Types::ModifierType ]
 
     def modifier_group
       # Pass the current `item` to the context
